@@ -1,0 +1,135 @@
+
+using System;
+
+
+    public class Program
+    {
+        public static void Main(string[] args)
+            {
+            //    You're tasked with creating some software that should be able to calculate the area of a rectangle. Write a single function that accepts 2 integer parameters and return the calculated area as an integer. In your Main function, call your area function passing in same sample data to test that your function works. You will be required to print the result of your calculation to the screen.
+               
+               
+                Console.WriteLine(RecArea(3, 4));
+                Console.WriteLine("\n");
+                MultTable(7);
+                Console.WriteLine("\n");
+                int[] maxarray = {534, 4, 6, 453, 7, 4, 8768, 6, 2, 4, 5, 79, 0, 4};
+                Console.Write(Max(maxarray));
+                Console.WriteLine("\n");
+
+                int[] minarray = {534, 4, 6, 453, 7, -323, 8768, 6, 2, 4, 5, 79, 0, 4};
+                Console.Write(Min(minarray));
+                Console.WriteLine("\n");
+
+                int[] avgarray = {1, 2, 3, 4, 5};
+                Console.Write(Average(avgarray));
+                Console.WriteLine("\n");
+            }
+
+        static  int RecArea(int length, int width)
+            {
+                int answer = (length * width);
+                return answer;
+            }
+
+        static void MultTable(int foo)
+            {
+                int mult = 1;
+
+                 for (int x = 0; x < (foo ); x++)
+                 {
+                        for (int y = 1; y < (foo +1); y++)
+                        {   
+                        //     int bar = 1;
+                            Console.Write(mult * y);
+                            Console.Write(" ");
+                        }
+                    mult++;
+                    Console.Write("\n");
+                 }
+                
+            }  
+
+
+        static int Max(int[] numz )
+        {
+            //code below is insertion sort
+
+
+            // int max = 0;
+            // int j = 0;
+            // int element = 0;
+            // // Console.Write(numz.Length);
+            // for (int i = 0; i < numz.Length; i++)
+            // {
+            //     element = numz[i];
+
+            //      j = i;
+
+            //      while (j > 0 && numz[j - 1] > element) //element is the value of arr[i]
+            //         {
+            //             numz[j] = numz[j-1];
+            //             j= j-1;
+            //             numz[j] = element;
+            //         }
+
+//  return numz[numz.Length - 1];
+
+                int max = 0;
+
+                // Console.Write(numz.Length);
+
+                for (int i = 0; i < numz.Length; i++)
+                {
+                    //code for max
+                    if (i == 0)
+                        {
+                            max = numz[0];
+                        }
+                    else if ( (i > 0 ) && ( (numz[i]) > max ) )
+                        {
+                            // Console.Write(numz[i]);
+                            max = numz[i];
+                        }
+                }
+
+                    return max;           
+        }
+
+        static int  Min(int[] numzz)
+        {
+                int min = 0;
+
+                for (int i = 0; i < numzz.Length; i++)
+                {
+                    //code for max
+                    if (i == 0)
+                        {
+                            min = numzz[0];
+                        }
+                    else if ( (i > 0 ) && ( (numzz[i]) < min ) )
+                        {
+                            // Console.Write(numz[i]);
+                            min = numzz[i];
+                        }
+                }
+
+                    return min;  
+
+        }
+
+        static float Average(int[] numzzz)
+        {
+             int sum = 0;
+
+             for (int i = 0; i < numzzz.Length; i++)
+                {
+                   sum = sum + numzzz[i];
+                }
+
+            float average = sum / numzzz.Length;
+
+            return average;
+        }
+
+    }
